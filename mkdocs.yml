@@ -1,1 +1,8 @@
 site_name: C 语言技术面试
+
+nav:
+    - 首页: index.md
+    - 基础知识: basic/
+    - 算法相关: algorithm/
+    - 领域相关: tech-area/
+    - 项目经验: projects/
