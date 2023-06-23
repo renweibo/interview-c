@@ -9,6 +9,9 @@ nav:
 
 plugins:
     - search
+    - redirects:
+        redirect_maps:
+            basic/basic_algorithm.md: algorithm/basic.md
     - autorefs
     - literate-nav:
         implicit_index: true
