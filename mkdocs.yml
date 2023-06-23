@@ -6,3 +6,9 @@ nav:
     - 算法相关: algorithm/
     - 领域相关: tech-area/
     - 项目经验: projects/
+
+plugins:
+    - search
+    - autorefs
+    - literate-nav:
+        implicit_index: true
