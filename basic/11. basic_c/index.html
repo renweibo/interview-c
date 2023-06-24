@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>C 语言基础 - C 语言技术面试</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">C 语言技术面试</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">首页</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">基础知识 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">基础内容</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">C 语言基础</a>
+</li>
+                                    
+<li>
+    <a href="../21.%20basic_c%2B%2B/" class="dropdown-item">C++ 语言基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">算法相关 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../algorithm/" class="dropdown-item">算法相关</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithm/basic/" class="dropdown-item">基础算法</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">领域相关 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tech-area/" class="dropdown-item">领域相关</a>
+</li>
+                                    
+<li>
+    <a href="../../tech-area/parallel_computing/" class="dropdown-item">并行计算</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">项目经验 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../projects/" class="dropdown-item">过往项目</a>
+</li>
+                                    
+<li>
+    <a href="../../projects/os/" class="dropdown-item">操作系统相关</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../21.%20basic_c%2B%2B/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#c" class="nav-link">C 语言基础</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#cheat-sheet" class="nav-link">cheat sheet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#null" class="nav-link">NULL 相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">字符串相关</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#string" class="nav-link">字符串 string</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#array-of-char" class="nav-link">字符数组 array of char</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#array-of-strings" class="nav-link">字符串数组 array of strings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_2" class="nav-link">日期相关常见操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_3" class="nav-link">实用功能</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">日志相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link">异常相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">网络相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_7" class="nav-link">设计模式 与 反模式</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_8" class="nav-link">开发技巧</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">调试相关</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_10" class="nav-link">内存泄漏排查</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_11" class="nav-link">死锁排查</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="c">C 语言基础</h1>
+<h1 id="cheat-sheet">cheat sheet</h1>
+<h1 id="null">NULL 相关</h1>
+<p>Go has nil, JavaScript has null, Python has None, and so on.</p>
+<p>C has NULL.</p>
+<p>NULL however is used differently from other languages. In C, NULL is limited to identifying a null pointer.</p>
+<ul>
+<li>初始化</li>
+</ul>
+<pre><code class="language-c">#include &lt;stdio.h&gt; // &lt;stddef.h&gt;
+
+int * p_some_variable = NULL;
+</code></pre>
+<ul>
+<li>比较操作 <code>p_some_variable == NULL</code></li>
+</ul>
+<p>In practice, NULL is a constant equivalent to 0, or "\0".</p>
+<p>This is why you can set a string to NULL using:</p>
+<pre><code class="language-c">char *a_string = '\0';
+</code></pre>
+<h1 id="_1">字符串相关</h1>
+<p>string，array of char，array of strings</p>
+<h2 id="string">字符串 string</h2>
+<ul>
+<li>打印</li>
+</ul>
+<pre><code class="language-c">printf (&quot;%s\n&quot;, s); // 常见打印
+</code></pre>
+<h2 id="array-of-char">字符数组 array of char</h2>
+<h2 id="array-of-strings">字符串数组 array of strings</h2>
+<ul>
+<li>初始化，展示</li>
+</ul>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+char **strings = (char**)malloc(5*sizeof(char*));
+char arr[3][10] = {&quot;Geek&quot;, &quot;Geeks&quot;, &quot;Geekfor&quot;}; // array of char array
+char arr[][] = {&quot;Geek&quot;, &quot;Geeks&quot;, &quot;Geekfor&quot;}; // array of char array
+
+
+const char * array[] = {
+    &quot;First entry&quot;,
+    &quot;Second entry&quot;,
+    &quot;Third entry&quot;,
+};
+
+#define LEN(array) (sizeof (array) / sizeof (const char *))
+
+int main () {
+    int i;
+
+    for (i = 0; i &lt; LEN(array); i++) {
+        printf (&quot;%d: %s\n&quot;, i, array[i]);
+    }
+    return 0;
+}
+</code></pre>
+<ul>
+<li>初始化</li>
+</ul>
+<pre><code class="language-c">char **strings = (char**)malloc(5*sizeof(char*));
+for(int i;i&lt;5;i++)
+{
+    strings[i] = malloc(sizeof(char) * l);
+    //or
+    strings[i] = &quot;hello&quot;;
+}
+</code></pre>
+<ul>
+<li>定义和初始化</li>
+</ul>
+<pre><code class="language-c">char **strings;
+char **strings = NULL
+char **strings = {NULL}
+</code></pre>
+<h1 id="_2">日期相关常见操作</h1>
+<h1 id="_3">实用功能</h1>
+<h2 id="_4">日志相关</h2>
+<h2 id="_5">异常相关</h2>
+<h2 id="_6">网络相关</h2>
+<h1 id="_7">设计模式 与 反模式</h1>
+<h1 id="_8">开发技巧</h1>
+<h2 id="_9">调试相关</h2>
+<h2 id="_10">内存泄漏排查</h2>
+<h2 id="_11">死锁排查</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

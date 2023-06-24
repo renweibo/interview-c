@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>C 语言技术面试</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">C 语言技术面试</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">首页</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">基础知识 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="basic/" class="dropdown-item">基础内容</a>
+</li>
+                                    
+<li>
+    <a href="basic/11.%20basic_c/" class="dropdown-item">C 语言基础</a>
+</li>
+                                    
+<li>
+    <a href="basic/21.%20basic_c%2B%2B/" class="dropdown-item">C++ 语言基础</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">算法相关 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="algorithm/" class="dropdown-item">算法相关</a>
+</li>
+                                    
+<li>
+    <a href="algorithm/basic/" class="dropdown-item">基础算法</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">领域相关 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="tech-area/" class="dropdown-item">领域相关</a>
+</li>
+                                    
+<li>
+    <a href="tech-area/parallel_computing/" class="dropdown-item">并行计算</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">项目经验 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="projects/" class="dropdown-item">过往项目</a>
+</li>
+                                    
+<li>
+    <a href="projects/os/" class="dropdown-item">操作系统相关</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="basic/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">首页</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">背景</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">领域内容划分</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">准备策略</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">首页</h1>
+<h2 id="_2">背景</h2>
+<p>为了提升技术面试的准备程度，更好提升技术面试通过率，还是需要认真对待，想的大一点，既然有兴趣，那这件事情就要做好，总体预判，通过比较适合自身的准备来完成C语言技术面试这件事，是一个中等难度的事情，有计划，有方法，持续投入小块时间和碎片时间。</p>
+<p>基本考虑过后，可以看出要求高的 C/C++ 技术面试，对于面试者还是比较难的一件事，主要原因有：</p>
+<ul>
+<li>技术背景的拉齐比较难，和被面试的公司的技术背景很可能不一致，直接的项目经验不太容易一致，面试交流比较难，面试者可能不理解候选公司的技术，一个公司多多少少都有些自己惯用思路。</li>
+<li>工作过程中，容易落入个别领域，很多工作中不常用的内容就会被忽视，导致面试过程中给面试官印象技术面偏窄</li>
+<li>算法（俗称刷题）准备耗时，短时间的准备比较难覆盖到，需要大量时间才能有可能在面试中算法和解决问题比较顺畅</li>
+<li>C的基础知识还好，C++的基础知识就太过庞大和复杂，比较完整准备要求不低（时间上和难度上），如果在涉及一些常见库的使用</li>
+<li>解决问题的经验和思路，这块对于有经验的人，反倒容易不少</li>
+<li>针对个人/团队的技术提升上的软技巧，比如总结、分析、培训、分享之类的还好，有经验的人一般还好</li>
+<li>其他非技术面试，这里暂时不展开，比如管理、软技巧、性格、潜力等等常见要求</li>
+</ul>
+<h2 id="_3">领域内容划分</h2>
+<ul>
+<li>C 语言基础，难度低，重要性高</li>
+<li>C++ 语言基础，难度中/高，重要性中/高</li>
+<li>基础算法，难度中，重要程度高</li>
+<li>领域特定算法，难度中/高，重要程度高</li>
+<li>过往项目的重要内容，难度低，重要性高</li>
+<li>解决问题的经验，难度低，重要性高</li>
+<li>解决问题的思路方法论，难度低，重要性高</li>
+<li>面试过程引导和观察，难度低</li>
+<li>自我介绍（个人、经验、能力），难度中，重要程度高</li>
+</ul>
+<h2 id="_4">准备策略</h2>
+<p>可用时间：毕竟上着班，会有一些小块的时间和大量的碎片时间，这个要尽量合理利用，碎片时间用于搜索、补充完善信息源，小块时间有一类比较特殊的，是上下班路上车里，这个比较适合听一些音频内容。</p>
+<p>准备过程侧重点：</p>
+<ul>
+<li>前期：基础知识，基础算法，收集信息，准备好音频内容</li>
+<li>中期：前期内容继续，外加领域特定算法</li>
+<li>后期：过往项目的重要内容、解决问题的经验、解决问题的思路方法论</li>
+<li>面试前：也就面试前一两天，自我介绍，或许需要英文版，根据需要来；面试过程引导和观察，暂时不做刻意准备，现场发挥</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.4.3
+Build Date UTC : 2023-06-24 09:41:23.052676+00:00
+-->
